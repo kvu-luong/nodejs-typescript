@@ -5,6 +5,7 @@ export const logObject = {
 
 export const ModelName = {
   user: 'Users',
+  product: 'Products',
 };
 
 export const ROUTE = {

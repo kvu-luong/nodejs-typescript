@@ -78,6 +78,10 @@ node -v > .nvmrc
     - Import module-alias in start up file: 'index.ts'
 
 ## 2. Start Coding
+
+***Flow code:***
+type -> schema -> model ( connect db) -> service ( handle with db) -> controller ( logic) => map to route
+
 1. Tutorial: https://www.youtube.com/watch?v=BWUi6BS9T5Y&t=0s 
 2. Conect Mongodb
 3. Log with pino
@@ -109,8 +113,23 @@ openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
 
 using middleware to validate token (role later): OK
 api create/ get / update / delete product with role,
+
 *** api  create multiple product
+
+input schema like this:
+```
+{
+    "list": [
+        {
+            "name": "haah",
+            "quantity": 123
+        }
+    ]
+}
+```
 
 api register / login ( refresh token in cookie ): OK
 using lodash: OK
+
 using bulder pattern to response: https://www.youtube.com/watch?v=M7Xi1yO_s8E&list=LL&index=39 : OK
+

@@ -2,9 +2,9 @@ import express from 'express';
 const router = express.Router();
 import { Request, Response } from 'express'; // type express
 import AuthenMidleware from '../../middleware/validateToken';
-import { createUserHandler, loginControllerHandler } from '../../controller/user.controller';
+import { createProductHandler, listAllProductHandler } from '../../controller/product.controller';
 import validateResource from '@middleware/validateResource';
-import { UserRequestSchema, LoginRequestSchema } from '../../schema/user.schema';
+import { SingleProductSchema, ListProductSchema } from '../../schema/product.schema';
 
 router.get('/', [AuthenMidleware], (_req: Request, res: Response) => {
   res.status(200).json({
@@ -12,6 +12,6 @@ router.get('/', [AuthenMidleware], (_req: Request, res: Response) => {
   });
 });
 
-router.post('/single_product', validateResource(UserRequestSchema), createUserHandler);
-router.get('/products', validateResource(LoginRequestSchema), loginControllerHandler);
+router.post('/single_product', [AuthenMidleware, validateResource(SingleProductSchema)], createProductHandler);
+router.get('/list', [AuthenMidleware, validateResource(ListProductSchema)], listAllProductHandler);
 export default router;
