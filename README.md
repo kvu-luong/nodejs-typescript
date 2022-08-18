@@ -70,6 +70,13 @@ node -v > .nvmrc
 - create file .npmrc
 - setup engine in package.json
 
+7. Alias typescript
+
+    - Adding **baseUrl** and **paths** in compilesOption in tsconfig.json
+    - Adding script in package.json
+    - Install module-alias
+    - Import module-alias in start up file: 'index.ts'
+
 ## 2. Start Coding
 1. Tutorial: https://www.youtube.com/watch?v=BWUi6BS9T5Y&t=0s 
 2. Conect Mongodb
@@ -82,3 +89,28 @@ node -v > .nvmrc
      Differences between import and require:
 
     **require** for express library,  but we need to use **import** for type express
+5. Schema with zod : https://zod.dev/?id=type-inference 
+
+6. To do by myself base of this video
+connect mongdb
+log with pino
+using joi instead of zod to validate param input to api: object: ok, object
+
+***testing with postman: pre-request, test: https://learning.postman.com/docs/writing-scripts/pre-request-scripts/
+
+***create jwt with private/public key
+- generate key with openssl: 
+```
+ssh-keygen -t rsa -b 4096 -m PEM -f jwtRS256.key
+# Don't add passphrase
+openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
+
+```
+
+using middleware to validate token (role later): OK
+api create/ get / update / delete product with role,
+*** api  create multiple product
+
+api register / login ( refresh token in cookie ): OK
+using lodash: OK
+using bulder pattern to response: https://www.youtube.com/watch?v=M7Xi1yO_s8E&list=LL&index=39 : OK

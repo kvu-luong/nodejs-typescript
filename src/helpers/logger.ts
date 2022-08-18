@@ -1,6 +1,6 @@
 const pino = require('pino');
 const day = require('dayjs');
-const { logObject } = require('../utils/constant');
+import { logObject } from '../utils/constant';
 
 require('dotenv').config();
 const currentDay = day().format('DD_MM_YYYY');
@@ -16,8 +16,6 @@ const consoleConfig = [
     },
   },
 ];
-
-console.log(`${process.cwd()}/logs/${currentDay}/tracking.log`);
 let writeLogConfig = [
   {
     target: consoleConfig[0]?.target,

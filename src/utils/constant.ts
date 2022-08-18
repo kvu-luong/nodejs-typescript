@@ -1,8 +1,14 @@
-const logObject = {
+export const logObject = {
   on: 'on',
   off: 'off',
 };
 
-module.exports = {
-  logObject,
+export const ModelName = {
+  user: 'Users',
+};
+
+export const ROUTE = {
+  USER: {
+    REFRESH_TOKEN: '/refresh_token',
+  },
 };
